@@ -1,0 +1,39 @@
+{% extends 'inicio.html' %}
+
+
+{% block section %}
+
+
+
+
+        <div class="mod__fichas-promociones mod__fichas-promociones--flex">
+
+
+            {% for promo in lista_promocion %}
+                <div class="fichas-promociones fichas-promociones">
+                     <a href="{% url 'promodetail' promo.pk %}">
+
+
+                             <div class="card-image">
+
+                                 <img src="{{ promo.url }}" alt="{{ promo.titulo }}" height="150" />
+                             </div>
+
+                            <div class="card-section">
+                                <h3  class="article-title article-title--promociones"> {{ promo.titulo }}</h3>
+                                <p>{{ promo.municipio }} </p>
+                                <p class="article-summary article-summary--money">Desde<br><strong class="text__promociones__money">{{ promo.precio }} €</strong></p>
+                                <p class="article-summary article-summary--state article-summary--state-green">{{ promo.dormitorios }} Dormitorios</p>
+
+                            </div>
+
+
+                     </a>
+                </div>
+            {% endfor %}
+
+
+
+    </div>
+
+{% endblock %}
