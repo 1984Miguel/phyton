@@ -30,7 +30,7 @@ class Promocion(models.Model):
     tipo = models.CharField(max_length=3, choices=TIPO)
     banner = models.BooleanField(default=False)
     precio = models.IntegerField(blank=True , null=True)
-    precio = models.IntegerField(max_length=150,blank=True, null=True)
+
     dormitorios = models.CharField(max_length=150,blank=True, null=True)
     def __unicode__(self):
         return self.titulo
